@@ -6,9 +6,9 @@
 # as they were 'current' at the time Komodo was developed.
 
 if [ type sudo &> /dev/null ]; then
-  export SUDO_CMD="sudo"
-else
   export SUDO_CMD=""
+else
+  export SUDO_CMD="sudo"
 fi
 
 export KMD_TMP_DIR="/tmp/komodo"
