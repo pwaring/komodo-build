@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Configuration options for building Komodo and its dependencies from source.
+# You should not need to change anything in this file - whilst in theory
+# later versions of Glib and GTK might work, only 1.2.x have been tested
+# as they were 'current' at the time Komodo was developed.
+
 export KMD_TMP_DIR="/tmp/komodo"
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
 
