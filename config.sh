@@ -5,12 +5,10 @@
 # later versions of Glib and GTK might work, only 1.2.x have been tested
 # as they were 'current' at the time Komodo was developed.
 
-export CYGWIN=${CYGWIN:-}
-
-if [ ! -z ${CYGWIN} ]; then
-  export SUDO_CMD=""
-else
+if [ type sudo &> /dev/null ]; then
   export SUDO_CMD="sudo"
+else
+  export SUDO_CMD=""
 fi
 
 export KMD_TMP_DIR="/tmp/komodo"
