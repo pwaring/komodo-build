@@ -7,7 +7,7 @@ export KMD_TMP_DIR="/tmp/komodo"
 
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
 
-# Remove and then recrete temp directory
+# Remove and then recreate temporary directory
 if [ -d ${KMD_TMP_DIR} ]; then
   rm -rf ${KMD_TMP_DIR}
 fi
