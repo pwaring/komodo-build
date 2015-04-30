@@ -5,7 +5,9 @@
 # later versions of Glib and GTK might work, only 1.2.x have been tested
 # as they were 'current' at the time Komodo was developed.
 
-if [ type sudo &> /dev/null ]; then
+export SUDO_TEST=$(type sudo &> /dev/null)$?
+
+if [ -z ${SUDO_TEST} ]; then
   export SUDO_CMD=""
 else
   export SUDO_CMD="sudo"
