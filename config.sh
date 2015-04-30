@@ -5,6 +5,14 @@
 # later versions of Glib and GTK might work, only 1.2.x have been tested
 # as they were 'current' at the time Komodo was developed.
 
+export CYGWIN=${CYGWIN:-}
+
+if [ ! -z ${CYGWIN} ]; then
+  export SUDO_CMD=""
+else
+  export SUDO_CMD="sudo"
+fi
+
 export KMD_TMP_DIR="/tmp/komodo"
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
 
