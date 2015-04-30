@@ -1,2 +1,3 @@
-# komodo-build
-Build scripts for Komodo
+# Komodo
+
+Build scripts for Komodo.
