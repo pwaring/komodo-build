@@ -7,10 +7,10 @@
 
 export SUDO_TEST=$(type sudo &> /dev/null)$?
 
-if [ -z ${SUDO_TEST} ]; then
-  export SUDO_CMD=""
-else
+if [ ${SUDO_TEST} -eq 0 ]; then
   export SUDO_CMD="sudo"
+else
+  export SUDO_CMD=""
 fi
 
 export KMD_TMP_DIR="/tmp/komodo"
