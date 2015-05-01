@@ -88,8 +88,13 @@ cp ${CONFIG_SRC_DIR}/config.guess ${KMD_SRC_DIR}/config.guess
 # Set up PATH so it can find GTK config
 export PATH="${PATH}:${KMD_TMP_DIR}/bin"
 
-# Configure and build glib
+# Configure and build Komodo
 cd ${KMD_SRC_DIR}
 ./configure ${KMD_CONFIGURE_OPTIONS[*]}
 make
+
+# Horrible hack to get around the problem of OS X refusing to execute
+# a script, even if run via /bin/sh install-sh
+chmod 755 ${KMD_SRC_DIR}/install-sh
+
 ${SUDO_CMD} make install
