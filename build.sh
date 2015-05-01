@@ -61,7 +61,7 @@ tar xf ${GTK_TARBALL}
 cp ${CONFIG_SRC_DIR}/config.sub ${GTK_SRC_DIR}/config.sub
 cp ${CONFIG_SRC_DIR}/config.guess ${GTK_SRC_DIR}/config.guess
 
-# Configure and build glib
+# Configure and build GTK
 cd ${GTK_SRC_DIR}
 ./configure ${GTK_CONFIGURE_OPTIONS[*]}
 make
