@@ -6,6 +6,8 @@
 # as they were 'current' at the time Komodo was developed.
 
 export SUDO_TEST=$(type sudo &> /dev/null)$?
+export X_INCLUDES=${X_INCLUDES:-}
+export X_LIBRARIES=${X_LIBRARIES:-}
 
 if [ ${SUDO_TEST} -eq 0 ]; then
   export SUDO_CMD="sudo"
@@ -42,6 +44,15 @@ export GTK_CONFIGURE_OPTIONS=(
   "--disable-gtktest"
   "--with-glib=${GLIB_SRC_DIR}"
 )
+
+# Specify X includes and libraries if necessary, e.g. on OS X
+if [ ! -z ${X_INCLUDES} ]; then
+  GTK_CONFIGURE_OPTIONS+=("--x-includes=${X_INCLUDES}")
+fi
+
+if [ ! -z ${X_LIBRARIES} ]; then
+  GTK_CONFIGURE_OPTIONS+=("--x-libraries=${X_LIBRARIES}")
+fi
 
 export KMD_VERSION="1.5.0"
 export KMD_FILENAME="kmd.tar.gz"
