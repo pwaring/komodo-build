@@ -12,11 +12,6 @@ else
   mkdir ${INSTALL_PREFIX}
 fi
 
-# Remove and then recreate temporary directory
-if [ -d ${KMD_TMP_DIR} ]; then
-  rm -rf ${KMD_TMP_DIR}
-fi
-
 mkdir ${KMD_TMP_DIR}
 
 # 1. Clone config files so we have up to date versions
