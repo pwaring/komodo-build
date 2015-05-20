@@ -8,8 +8,6 @@ export INSTALL_PREFIX="${HOME}/kmd"
 export X_INCLUDES=${X_INCLUDES:-}
 export X_LIBRARIES=${X_LIBRARIES:-}
 
-export PATH=${INSTALL_PREFIX}/bin:${PATH}
-
 export KMD_TMP_DIR="${HOME}/kmd/tmp"
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
 
@@ -57,11 +55,11 @@ fi
 
 GTK_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
 
-export KMD_VERSION="1.5.0"
-export KMD_FILENAME="kmd.tar.gz"
-export KMD_URL="https://studentnet.cs.manchester.ac.uk/resources/software/komodo/${KMD_FILENAME}"
+export KMD_VERSION="master"
+export KMD_FILENAME="master.zip"
+export KMD_URL="https://github.com/UoMCS/komodo/archive/${KMD_FILENAME}"
 export KMD_TARBALL="${KMD_TMP_DIR}/${KMD_FILENAME}"
-export KMD_SRC_DIR="${KMD_TMP_DIR}/KMD-${KMD_VERSION}"
+export KMD_SRC_DIR="${KMD_TMP_DIR}/komodo-${KMD_VERSION}"
 export KMD_CONFIGURE_OPTIONS=(
   "--disable-glibtest"
   "--disable-gtktest"

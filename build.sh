@@ -81,11 +81,11 @@ if [ -d ${KMD_SRC_DIR} ]; then
 fi
 
 cd ${KMD_TMP_DIR}
-tar xf ${KMD_TARBALL}
+unzip ${KMD_TARBALL}
 
 # Copy up to date versions of config files
-cp ${CONFIG_SRC_DIR}/config.sub ${KMD_SRC_DIR}/config.sub
-cp ${CONFIG_SRC_DIR}/config.guess ${KMD_SRC_DIR}/config.guess
+#cp ${CONFIG_SRC_DIR}/config.sub ${KMD_SRC_DIR}/config.sub
+#cp ${CONFIG_SRC_DIR}/config.guess ${KMD_SRC_DIR}/config.guess
 
 # Set up PATH so it can find GTK config
 export PATH="${PATH}:${KMD_TMP_DIR}/bin:${INSTALL_PREFIX}/bin"
