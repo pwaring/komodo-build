@@ -4,7 +4,7 @@
 # You should not need to change anything in this file - whilst in theory
 # later versions of Glib and GTK might work, only 1.2.x have been tested
 # as they were 'current' at the time Komodo was developed.
-
+export INSTALL_PREFIX="${HOME}/kmd"
 export SUDO_TEST=$(type sudo &> /dev/null)$?
 export X_INCLUDES=${X_INCLUDES:-}
 export X_LIBRARIES=${X_LIBRARIES:-}
@@ -21,6 +21,10 @@ export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
 export CONFIG_URL="git://git.savannah.gnu.org/config.git"
 export CONFIG_SRC_DIR="${KMD_TMP_DIR}/config"
 
+export GENERAL_CONFIGURE_OPTIONS=(
+  "--prefix=${INSTALL_PREFIX}"
+)
+
 export GLIB_VERSION_MAJOR="1.2"
 export GLIB_VERSION_MINOR="0"
 export GLIB_VERSION="${GLIB_VERSION_MAJOR}.${GLIB_VERSION_MINOR}"
@@ -31,6 +35,8 @@ export GLIB_SRC_DIR="${KMD_TMP_DIR}/glib-${GLIB_VERSION}"
 export GLIB_CONFIGURE_OPTIONS=(
   "--disable-glibtest"
 )
+
+GLIB_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
 
 export GTK_VERSION_MAJOR="1.2"
 export GTK_VERSION_MINOR="10"
@@ -54,6 +60,8 @@ if [ ! -z ${X_LIBRARIES} ]; then
   GTK_CONFIGURE_OPTIONS+=("--x-libraries=${X_LIBRARIES}")
 fi
 
+GTK_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
+
 export KMD_VERSION="1.5.0"
 export KMD_FILENAME="kmd.tar.gz"
 export KMD_URL="https://studentnet.cs.manchester.ac.uk/resources/software/komodo/${KMD_FILENAME}"
@@ -64,3 +72,5 @@ export KMD_CONFIGURE_OPTIONS=(
   "--disable-gtktest"
   "--with-glib=${GLIB_SRC_DIR}"
 )
+
+KMD_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})

@@ -5,6 +5,13 @@ set -e
 
 source ./config.sh
 
+# Clear out INSTALL PREFIX, or create if it does not exist
+if [ -d ${INSTALL_PREFIX} ]; then
+  rm -rf ${INSTALL_PREFIX}/*
+else
+  mkdir ${INSTALL_PREFIX}
+fi
+
 # Remove and then recreate temporary directory
 if [ -d ${KMD_TMP_DIR} ]; then
   rm -rf ${KMD_TMP_DIR}
