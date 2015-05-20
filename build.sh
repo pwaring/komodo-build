@@ -48,7 +48,7 @@ cp ${CONFIG_SRC_DIR}/config.guess ${GLIB_SRC_DIR}/config.guess
 cd ${GLIB_SRC_DIR}
 ./configure ${GLIB_CONFIGURE_OPTIONS[*]}
 make
-${SUDO_CMD} make install
+make install
 
 # 3. Download and build GTK
 # Only download the tarball if it does not exist
@@ -72,7 +72,7 @@ cp ${CONFIG_SRC_DIR}/config.guess ${GTK_SRC_DIR}/config.guess
 cd ${GTK_SRC_DIR}
 ./configure ${GTK_CONFIGURE_OPTIONS[*]}
 make
-${SUDO_CMD} make install
+make install
 
 # 4. Download and build Komodo
 # Only download the tarball if it does not exist
@@ -104,4 +104,4 @@ make
 # a script, even if run via /bin/sh install-sh
 chmod 755 ${KMD_SRC_DIR}/install-sh
 
-${SUDO_CMD} make install
+make install

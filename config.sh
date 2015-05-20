@@ -5,15 +5,8 @@
 # later versions of Glib and GTK might work, only 1.2.x have been tested
 # as they were 'current' at the time Komodo was developed.
 export INSTALL_PREFIX="${HOME}/kmd"
-export SUDO_TEST=$(type sudo &> /dev/null)$?
 export X_INCLUDES=${X_INCLUDES:-}
 export X_LIBRARIES=${X_LIBRARIES:-}
-
-if [ ${SUDO_TEST} -eq 0 ]; then
-  export SUDO_CMD="sudo"
-else
-  export SUDO_CMD=""
-fi
 
 export KMD_TMP_DIR="/tmp/komodo"
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
