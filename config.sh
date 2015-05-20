@@ -8,6 +8,8 @@ export INSTALL_PREFIX="${HOME}/kmd"
 export X_INCLUDES=${X_INCLUDES:-}
 export X_LIBRARIES=${X_LIBRARIES:-}
 
+export PATH=${INSTALL_PREFIX}/bin:${PATH}
+
 export KMD_TMP_DIR="${HOME}/kmd/tmp"
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
 

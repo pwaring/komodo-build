@@ -88,7 +88,7 @@ cp ${CONFIG_SRC_DIR}/config.sub ${KMD_SRC_DIR}/config.sub
 cp ${CONFIG_SRC_DIR}/config.guess ${KMD_SRC_DIR}/config.guess
 
 # Set up PATH so it can find GTK config
-export PATH="${PATH}:${KMD_TMP_DIR}/bin"
+export PATH="${PATH}:${KMD_TMP_DIR}/bin:${INSTALL_PREFIX}/bin"
 
 # Configure and build Komodo
 cd ${KMD_SRC_DIR}
