@@ -24,3 +24,10 @@ On OS X, you will need to set the following environment variables:
 `gcc` command both point to `clang`, which will not compile Komodo.
 * `X_INCLUDES`: Path to X11 includes, likely to be: `/opt/X11/include`
 * `X_LIBRARIES`: Path to X11 libraries, likely to be: `/opt/X11/lib`
+
+## Running Komodo
+
+To run Komodo locally after building, you need to specify an environment
+variable so that the shared Glib and GTK libraries are picked up:
+
+LD_LIBRARY_PATH=${HOME}/kmd ${HOME}/kmd/bin/kmd
