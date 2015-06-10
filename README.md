@@ -2,6 +2,8 @@
 
 Build scripts for Komodo.
 
+To build Komodo, edit any settings in `config.sh` and then run `./build.sh`.
+
 ## Dependencies
 
 ### Windows
