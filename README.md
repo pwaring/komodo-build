@@ -3,8 +3,19 @@
 Build scripts for Komodo.
 
 To build Komodo, edit any settings in `config.sh` and then run `./build.sh`.
+The script will download packages, so you must have a working internet
+connection for the duration of the build process.
 
 ## Dependencies
+
+The method for installing the basic dependencies varies based on platform.
+
+### Linux
+
+On Debian systems, the following packages need to be installed:
+
+ * libxmu-dev
+ * libxi-dev
 
 ### Windows
 
@@ -33,6 +44,7 @@ On OS X, you will need to set the following environment variables:
 `gcc` command both point to `clang`, which will not compile Komodo.
 * `X_INCLUDES`: Path to X11 includes, likely to be: `/opt/X11/include`
 * `X_LIBRARIES`: Path to X11 libraries, likely to be: `/opt/X11/lib`
+
 
 ## Running Komodo
 
