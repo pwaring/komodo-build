@@ -17,6 +17,13 @@ On Debian systems, the following packages need to be installed:
  * libxmu-dev
  * libxi-dev
 
+Similar packages may exist on other distributions. If your package manager
+allows searching within packages, you can find the relevant ones by searching
+for the following files:
+
+ * `X11/Xmu/WinUtil.h`
+ * `X11/extensions/XInput.h`
+
 ### Windows
 
 It is possible to build Komodo on Windows using Cygwin. The following packages
