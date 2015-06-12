@@ -9,11 +9,14 @@ To build Komodo, edit any settings in `config.sh` and then run `./build.sh`.
 ### Windows
 
 It is possible to build Komodo on Windows using Cygwin. The following packages
-must be installed (via the setup program) for a successful build:
+must be installed for a successful build:
 
  * Libs -> libX11-devel
  * Libs -> libXt-devel
  * X11 -> xinit
+
+These packages can be installed at the same time as Cygwin, or later by
+re-running the setup program (`setup-x86.exe` or `setup-x86_64.exe`).
 
 ### OS X
 
