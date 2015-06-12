@@ -16,6 +16,7 @@ On Debian systems, the following packages need to be installed:
 
  * libxmu-dev
  * libxi-dev
+ * libxt-dev
 
 Similar packages may exist on other distributions. If your package manager
 allows searching within packages, you can find the relevant ones by searching
@@ -23,6 +24,7 @@ for the following files:
 
  * `X11/Xmu/WinUtil.h`
  * `X11/extensions/XInput.h`
+ * `X11/Intrinsic.h`
 
 ### Windows
 
@@ -52,6 +54,13 @@ On OS X, you will need to set the following environment variables:
 * `X_INCLUDES`: Path to X11 includes, likely to be: `/opt/X11/include`
 * `X_LIBRARIES`: Path to X11 libraries, likely to be: `/opt/X11/lib`
 
+For example:
+
+```
+CC=/usr/local/Cellar/gcc49/4.9.2_1/bin/gcc-4.9  X_INCLUDES=/opt/X11/include X_LIBRARIES=/opt/X11/lib bash -x ./build.sh 2>&1 | tee
+```
+
+The build script has been tested with GCC 4.9.2 - version 5.1.0 does not work.
 
 ## Running Komodo
 
