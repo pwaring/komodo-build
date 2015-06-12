@@ -9,11 +9,15 @@ To build Komodo, edit any settings in `config.sh` and then run `./build.sh`.
 ### Windows
 
 It is possible to build Komodo on Windows using Cygwin. The following packages
-must be installed for a successful build:
+must be installed (via the setup program) for a successful build:
 
  * Libs -> libX11-devel
  * Libs -> libXt-devel
  * X11 -> xinit
+
+### OS X
+
+The X11 dependencies can be met be installing [XQuartz](http://xquartz.macosforge.org/).
 
 ## Build options
 
@@ -33,3 +37,6 @@ To run Komodo locally after building, you need to specify an environment
 variable so that the shared Glib and GTK libraries are picked up:
 
 LD_LIBRARY_PATH=${HOME}/kmd ${HOME}/kmd/bin/kmd
+
+Under Cygwin, you will need to run the above through an X server terminal,
+as opposed to the standard Cygwin terminal.
