@@ -69,6 +69,25 @@ cd ${GTK_SRC_DIR}
 make
 make install
 
+# 4. Download and build AASM
+# Only download the tarball if it does not exist
+if [ ! -f ${AASM_TARBALL} ]; then
+  wget ${AASM_URL} -O ${AASM_TARBALL}
+fi
+
+# Remove the source directory if it exists
+if [ -d ${AASM_SRC_DIR} ]; then
+  rm -rf ${AASM_SRC_DIR}
+fi
+
+cd ${KMD_TMP_DIR}
+unzip ${AASM_TARBALL}
+
+cd ${AASM_SRC_DIR}
+${CC} -O2 -o aasm aasm.c
+mv aasm ${INSTALL_PREFIX}
+mv mnemonics ${INSTALL_PREFIX}
+
 # 4. Download and build Komodo
 # Only download the tarball if it does not exist
 if [ ! -f ${KMD_TARBALL} ]; then
@@ -100,3 +119,16 @@ make
 chmod 755 ${KMD_SRC_DIR}/install-sh
 
 make install
+
+# Create a script for running Komodo
+echo "#!/bin/bash" > ${KMD_RUN_SCRIPT}
+echo "export LD_LIBRARY_PATH=${INSTALL_PREFIX}" >> ${KMD_RUN_SCRIPT}
+echo "export KMD_HOME=${INSTALL_PREFIX}" >> ${KMD_RUN_SCRIPT}
+echo "${INSTALL_PREFIX}/bin/kmd \$@" >> ${KMD_RUN_SCRIPT}
+
+chmod 755 ${KMD_RUN_SCRIPT}
+
+# Create the script for running AASM from Komodo
+echo "#!/bin/bash" > ${KMD_COMPILE_SCRIPT}
+echo 'FLNME=$(echo $1 | sed s/[.]s$//)' >> ${KMD_COMPILE_SCRIPT}
+echo "${AASM_BINARY} -lk \${FLNME}.kmd \$1" >> ${KMD_COMPILE_SCRIPT}

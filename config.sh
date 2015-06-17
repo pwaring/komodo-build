@@ -5,6 +5,7 @@
 # later versions of Glib and GTK might work, only 1.2.x have been tested
 # as they were 'current' at the time Komodo was developed.
 export INSTALL_PREFIX="${HOME}/kmd"
+export AASM_PREFIX="${INSTALL_PREFIX}/aasm"
 export X_INCLUDES=${X_INCLUDES:-}
 export X_LIBRARIES=${X_LIBRARIES:-}
 
@@ -55,6 +56,13 @@ fi
 
 GTK_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
 
+export AASM_VERSION="master"
+export AASM_FILENAME="master.zip"
+export AASM_URL="https://github.com/UoMCS/aasm/archive/${AASM_FILENAME}"
+export AASM_TARBALL="${KMD_TMP_DIR}/aasm-${AASM_FILENAME}"
+export AASM_SRC_DIR="${KMD_TMP_DIR}/aasm-${AASM_VERSION}"
+export AASM_BINARY="${INSTALL_PREFIX}/aasm"
+
 export KMD_VERSION="master"
 export KMD_FILENAME="master.zip"
 export KMD_URL="https://github.com/UoMCS/komodo/archive/${KMD_FILENAME}"
@@ -67,3 +75,5 @@ export KMD_CONFIGURE_OPTIONS=(
 )
 
 KMD_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
+KMD_RUN_SCRIPT="${INSTALL_PREFIX}/run.sh"
+KMD_COMPILE_SCRIPT="${INSTALL_PREFIX}/kmd_compile"
