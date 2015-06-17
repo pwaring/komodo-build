@@ -57,7 +57,7 @@ On OS X, you will need to set the following environment variables:
 For example:
 
 ```
-CC=/usr/local/Cellar/gcc49/4.9.2_1/bin/gcc-4.9  X_INCLUDES=/opt/X11/include X_LIBRARIES=/opt/X11/lib bash -x ./build.sh 2>&1 | tee
+CC=/usr/local/Cellar/gcc49/4.9.2_1/bin/gcc-4.9  X_INCLUDES=/opt/X11/include X_LIBRARIES=/opt/X11/lib bash -x ./build.sh 2>&1 | tee build.log
 ```
 
 The build script has been tested with GCC 4.9.2 - version 5.1.0 does not work.
