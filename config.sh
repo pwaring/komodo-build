@@ -8,6 +8,11 @@ export INSTALL_PREFIX="${HOME}/kmd"
 export AASM_PREFIX="${INSTALL_PREFIX}/aasm"
 export X_INCLUDES=${X_INCLUDES:-}
 export X_LIBRARIES=${X_LIBRARIES:-}
+export CC=${CC:-}
+
+if [ -z ${CC} ]; then
+  CC="gcc"
+fi
 
 export KMD_TMP_DIR="${HOME}/kmd/tmp"
 export GNOME_BASE_URL="http://ftp.gnome.org/pub/gnome/sources/"
@@ -76,4 +81,4 @@ export KMD_CONFIGURE_OPTIONS=(
 
 KMD_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
 KMD_RUN_SCRIPT="${INSTALL_PREFIX}/run.sh"
-KMD_COMPILE_SCRIPT="${INSTALL_PREFIX}/kmd_compile"
+KMD_COMPILE_SCRIPT="${INSTALL_PREFIX}/bin/kmd_compile"
