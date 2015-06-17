@@ -28,15 +28,15 @@ for the following files:
 
 ### Windows
 
-It is possible to build Komodo on Windows using Cygwin. The following packages
-must be installed for a successful build:
+It is possible to build Komodo on Windows using Cygwin (64 bit only). The
+following packages must be installed for a successful build:
 
- * Libs -> libX11-devel
- * Libs -> libXt-devel
- * X11 -> xinit
+ * Libs: libX11-devel
+ * Libs: libXt-devel
+ * X11: xinit
 
 These packages can be installed at the same time as Cygwin, or later by
-re-running the setup program (`setup-x86.exe` or `setup-x86_64.exe`).
+re-running the setup program (`setup-x86_64.exe`).
 
 ### OS X
 
