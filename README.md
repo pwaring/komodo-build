@@ -71,5 +71,7 @@ variable so that the shared Glib and GTK libraries are picked up:
 LD_LIBRARY_PATH=${HOME}/kmd/lib ${HOME}/kmd/bin/kmd
 ```
 
+Pass the `-e` option to run Komodo as an emulator. Jimulator should be used by default as it is built as part of Komodo.
+
 Under Cygwin, you will need to run the above through an X server terminal,
 as opposed to the standard Cygwin terminal.
