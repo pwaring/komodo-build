@@ -68,7 +68,7 @@ To run Komodo locally after building, you need to specify an environment
 variable so that the shared Glib and GTK libraries are picked up:
 
 ```
-LD_LIBRARY_PATH=${HOME}/kmd ${HOME}/kmd/bin/kmd
+LD_LIBRARY_PATH=${HOME}/kmd/lib ${HOME}/kmd/bin/kmd
 ```
 
 Under Cygwin, you will need to run the above through an X server terminal,
