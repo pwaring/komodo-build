@@ -39,9 +39,15 @@ tar xf ${GLIB_TARBALL}
 cp ${CONFIG_SRC_DIR}/config.sub ${GLIB_SRC_DIR}/config.sub
 cp ${CONFIG_SRC_DIR}/config.guess ${GLIB_SRC_DIR}/config.guess
 
-# Configure and build glib
+# Configure glib
 cd ${GLIB_SRC_DIR}
+
+# Patch to fix linker issues (multiple definitions)
+# taken from this gist: https://gist.github.com/bbidulock/e7ec7d6622471142e248
+sed 's,ifdef[[:space:]]*__OPTIMIZE__,if 0,' -i glib.h
 ./configure ${GLIB_CONFIGURE_OPTIONS[*]}
+
+# Build glib
 make
 make install
 
