@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -u
+set -e
+set -o pipefail
+
 # Configuration options for building Komodo and its dependencies from source.
 # You should not need to change anything in this file - whilst in theory
 # later versions of Glib and GTK might work, only 1.2.x have been tested

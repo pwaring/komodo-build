@@ -2,6 +2,7 @@
 
 set -u
 set -e
+set -o pipefail
 
 source ./config.sh
 
