@@ -63,14 +63,14 @@ GTK_CONFIGURE_OPTIONS+=(${GENERAL_CONFIGURE_OPTIONS[*]})
 
 export AASM_VERSION="master"
 export AASM_FILENAME="master.zip"
-export AASM_URL="https://github.com/UoMCS/aasm/archive/${AASM_FILENAME}"
+export AASM_URL="https://github.com/pwaring/aasm/archive/${AASM_FILENAME}"
 export AASM_TARBALL="${KMD_TMP_DIR}/aasm-${AASM_FILENAME}"
 export AASM_SRC_DIR="${KMD_TMP_DIR}/aasm-${AASM_VERSION}"
 export AASM_BINARY="${INSTALL_PREFIX}/aasm"
 
 export KMD_VERSION="master"
 export KMD_FILENAME="master.zip"
-export KMD_URL="https://github.com/UoMCS/komodo/archive/${KMD_FILENAME}"
+export KMD_URL="https://github.com/pwaring/komodo/archive/${KMD_FILENAME}"
 export KMD_TARBALL="${KMD_TMP_DIR}/${KMD_FILENAME}"
 export KMD_SRC_DIR="${KMD_TMP_DIR}/komodo-${KMD_VERSION}"
 export KMD_CONFIGURE_OPTIONS=(
