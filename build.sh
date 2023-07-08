@@ -129,7 +129,7 @@ make install
 
 # Create a script for running Komodo
 echo "#!/bin/bash" > ${KMD_RUN_SCRIPT}
-echo "export LD_LIBRARY_PATH=${INSTALL_PREFIX}" >> ${KMD_RUN_SCRIPT}
+echo "export LD_LIBRARY_PATH=${INSTALL_PREFIX}/lib" >> ${KMD_RUN_SCRIPT}
 echo "export KMD_HOME=${INSTALL_PREFIX}" >> ${KMD_RUN_SCRIPT}
 echo "${INSTALL_PREFIX}/bin/kmd \$@" >> ${KMD_RUN_SCRIPT}
 
