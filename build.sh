@@ -117,7 +117,7 @@ export PATH="${PATH}:${KMD_TMP_DIR}/bin:${INSTALL_PREFIX}/bin"
 
 # Configure and build Komodo
 cd ${KMD_SRC_DIR}
-./configure ${KMD_CONFIGURE_OPTIONS[*]}
+./configure ${KMD_CONFIGURE_OPTIONS[*]} CFLAGS="-fcommon"
 make
 
 # Horrible hack to get around the problem of OS X refusing to execute
