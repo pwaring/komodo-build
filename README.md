@@ -75,3 +75,9 @@ Pass the `-e` option to run Komodo as an emulator. Jimulator should be used by d
 
 Under Cygwin, you will need to run the above through an X server terminal,
 as opposed to the standard Cygwin terminal.
+
+There is also a run.sh script created as part of the build process which will set the relevant paths for you. You can start Komodo with Jimulator with the following command:
+
+```
+./run.sh -e ./bin/jimulator
+```
